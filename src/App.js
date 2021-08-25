@@ -1,12 +1,8 @@
- import React, {useState,useEffect,useRef} from 'react'
+ import React, {useState} from 'react'
 import './App.css'
 
 function App() {
 const[result, setResult] = useState("");
-
-const inputRef= useRef(null);
-
-useEffect(() => inputRef.current.focus());
 
 function handleClick(e){
   setResult(result.concat(e.target.name));
@@ -36,7 +32,7 @@ setResult("ERROR");
 return (
     <div className="calapp">
       <form>
-        <input type="text" value={result} ref={inputRef} />
+        <input type="text" value={result}  />
       </form>
       <div className="keypad">
        <button onClick={clearClick} id ="clear">Clear</button>
